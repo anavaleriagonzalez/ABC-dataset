@@ -104,7 +104,7 @@ srsly==0.1.0
 starlette==0.12.8
 stop-words==2018.7.23
 tensorboard==1.14.0
-tensorflow==1.14.0
+tensorflow==1.15.2
 tensorflow-estimator==1.14.0
 termcolor==1.1.0
 thinc==7.0.8
