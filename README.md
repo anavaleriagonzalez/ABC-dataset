@@ -15,9 +15,10 @@ Getting perplexity scores for each language
 `python experiments/LM/lm.py  --lang zh --filename data/COREF_LM/coref_lm.zh --data ABC`
 `python experiments/LM/lm.py  --lang ru --filename data/COREF_LM/coref_lm.ru --data ABC`
 
-the output file will have the format:
+or run `run_perpl.sh`
 
-<i>sentence</i>. male: <i>loss perplexity</i> fem: <i>loss perplexity</i> ref: <i>loss perplexity</i>
+the output file will have the format:
+<i>sentence</i>.  male: <i>loss perplexity</i> fem: <i>loss perplexity</i> ref: <i>loss perplexity</i>
 
 outputs are dumped at
 `outputs/lm/`
