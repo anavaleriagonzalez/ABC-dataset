@@ -24,8 +24,6 @@ if lang  == "zh":
     bertMaskedLM = BertForMaskedLM.from_pretrained('bert-base-chinese')
     tokenizer = BertTokenizer.from_pretrained('bert-base-chinese', do_lower_case=False)
 
-
-
 else:
     bertMaskedLM = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
     tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased', do_lower_case=False)
@@ -48,9 +46,6 @@ def score(sentence, lang):
 
     if lang == "zh":
         prons = "自己"
-
-
-
 
     print("Tokenizing....")
     tokenize_input = tokenizer.tokenize(sentence)
@@ -124,13 +119,9 @@ def score(sentence, lang):
     with torch.no_grad():
         predictions_truth = bertMaskedLM(tensor_truth, segments_tensors)[0]
 
-
-
     #predicted_male = predictions_male[0, pron_index].unsqueeze(0)
     #predicted_female = predictions_female[0, pron_index].unsqueeze(0)
     #truth_ = torch.tensor([tensor_truth[0,pron_index].item()])
-
-
 
     loss_fct = torch.nn.CrossEntropyLoss()
     loss_male = loss_fct(predictions_male.squeeze(),tensor_truth.squeeze()).data
@@ -153,8 +144,6 @@ def score_standard(sentence):
 
     return math.exp(loss)
 
-
-
 #read in data and score ABC dataset
 if data=='ABC':
     reflexive_sents = []
@@ -175,6 +164,7 @@ if data=='ABC':
         for i, sent in tqdm(enumerate(reflexive_sents)):
             scores = score(sent, lang)
             f.write(sent +" "+ scores +"\n")
+
 elif data =="benchmark":
     ppl_scores = []
     with open(filename, "r") as f:
@@ -192,7 +182,5 @@ elif data =="benchmark":
 
                 except Exception:
                     print("error")
-
-
 
     print("perplexity for benchmark: ", np.mean(ppl_scores))
