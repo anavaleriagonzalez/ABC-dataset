@@ -17,7 +17,7 @@ Getting perplexity scores for each language
 
 the output file will have the format:
 
-`<i>sentence</i>. male: <i>loss perplexity</i> fem: <i>loss perplexity</i> ref: <i>loss perplexity</i>`
+<i>sentence</i>. male: <i>loss perplexity</i> fem: <i>loss perplexity</i> ref: <i>loss perplexity</i>
 
 outputs are dumped at
 `outputs/lm/`
