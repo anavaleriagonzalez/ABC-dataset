@@ -1,4 +1,4 @@
-from pytorch_pretrained_bert import BertTokenizer,BertForMaskedLM
+from transformers import BertTokenizer, BertForMaskedLM
 import torch
 from nltk.tokenize import sent_tokenize
 import pandas as pd
@@ -23,6 +23,9 @@ data = args.data
 if lang  == "zh":
     bertMaskedLM = BertForMaskedLM.from_pretrained('bert-base-chinese')
     tokenizer = BertTokenizer.from_pretrained('bert-base-chinese', do_lower_case=False)
+
+
+
 else:
     bertMaskedLM = BertForMaskedLM.from_pretrained('bert-base-multilingual-cased')
     tokenizer = BertTokenizer.from_pretrained('bert-base-multilingual-cased', do_lower_case=False)
@@ -97,8 +100,6 @@ def score(sentence, lang):
 
     if lang == "zh":
 
-        print(len(tokenize_input))
-        print(len(tokenize_mask_male))
         tensor_input_male = torch.tensor([tokenizer.convert_tokens_to_ids(tokenize_mask_male)])
 
         tensor_input_female = torch.tensor([tokenizer.convert_tokens_to_ids(tokenize_mask_female)])
@@ -114,13 +115,14 @@ def score(sentence, lang):
     print("predicting...")
 
     with torch.no_grad():
-        predictions_male = bertMaskedLM(tensor_input_male, segments_tensors)
+        predictions_male = bertMaskedLM(tensor_input_male, segments_tensors)[0]
+
 
     with torch.no_grad():
-        predictions_female = bertMaskedLM(tensor_input_female, segments_tensors)
+        predictions_female = bertMaskedLM(tensor_input_female, segments_tensors)[0]
 
     with torch.no_grad():
-        predictions_truth = bertMaskedLM(tensor_truth, segments_tensors)
+        predictions_truth = bertMaskedLM(tensor_truth, segments_tensors)[0]
 
 
 
