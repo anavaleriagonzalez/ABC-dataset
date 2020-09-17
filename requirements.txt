@@ -114,7 +114,7 @@ torchvision==0.4.2
 tqdm==4.32.2
 typing==3.6.6
 urllib3==1.25.3
-uvicorn==0.9.0
+uvicorn==0.11.7
 uvloop==0.13.0
 wasabi==0.2.2
 websockets==8.0.2
