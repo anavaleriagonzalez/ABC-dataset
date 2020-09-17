@@ -7,25 +7,25 @@ Please refer to the paper for data generation details. Below are some instructio
 
 
 
-<h1>LM: Perplexity scores</h1>
+<h3>LM: Perplexity scores</h3>
 #Getting perplexity scores for each language
-python experiments/LM/lm.py  --lang da --filename data/COREF_LM/coref_lm.da --data ABC
-python experiments/LM/lm.py  --lang sv --filename data/COREF_LM/coref_lm.sv --data ABC
-python experiments/LM/lm.py  --lang zh --filename data/COREF_LM/coref_lm.zh --data ABC
-python experiments/LM/lm.py  --lang ru --filename data/COREF_LM/coref_lm.ru --data ABC
+`python experiments/LM/lm.py  --lang da --filename data/COREF_LM/coref_lm.da --data ABC`
+`python experiments/LM/lm.py  --lang sv --filename data/COREF_LM/coref_lm.sv --data ABC`
+`python experiments/LM/lm.py  --lang zh --filename data/COREF_LM/coref_lm.zh --data ABC`
+`python experiments/LM/lm.py  --lang ru --filename data/COREF_LM/coref_lm.ru --data ABC`
 
 the output file will have the format:
-<i>sentence</i>. male: <i>loss perplexity</i> fem: <i>loss perplexity</i> ref: <i>loss perplexity</i>
+`<i>sentence</i>. male: <i>loss perplexity</i> fem: <i>loss perplexity</i> ref: <i>loss perplexity</i>`
 
 outputs are dumped at
 `outputs/lm/`
 
 #Getting perplexity scores for some benchmark dataset (no gender data)
-python experiments/LM/lm.py  --lang da --filename "benchmark_data.txt" --data benchmark
+`python experiments/LM/lm.py  --lang da --filename "benchmark_data.txt" --data benchmark`
 
-<h1>Machine Translation</h1>
+<h3>Machine Translation</h3>
 
 
-<h1> Coreference Resolution</h1>
+<h3> Coreference Resolution</h3>
 
-<h1> Natural Language Inference </h1>
+<h3> Natural Language Inference </h3>
