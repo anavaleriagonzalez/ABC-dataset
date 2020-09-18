@@ -1,4 +1,5 @@
-Repository for Antireflexive Bias Challenge Dataset presented in "Type B Reflexivization as an Unambiguous Testbed for Multilingual Multi-Task Gender Bias"
+<h3>Antireflexive Bias Challenge Dataset</h3>
+ Data presented in "Type B Reflexivization as an Unambiguous Testbed for Multilingual Multi-Task Gender Bias"
 
 This paper has been accepted at EMNLP 2020
 
