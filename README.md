@@ -38,12 +38,19 @@ To compute the differences in the prediction of anti-reflexives versus gendered 
 `python experiments/MT/evaluate_translation.py --lang ru --translations outputs/mt/preds_google.ru`
 `python experiments/MT/evaluate_translation.py --lang zh --translations outputs/mt/preds_google.zh`
 
+or run `get_diff_mt.sh`
+
 note for chinese we did not find significant results.
 
 <h3> Coreference Resolution</h3>
-We trained the models using the model found here: https://github.com/mandarjoshi90/coref
+
+We trained the model found here: https://github.com/mandarjoshi90/coref
 For Chinese, we used the Chinese subset of Ontonotes5 (https://catalog.ldc.upenn.edu/LDC2013T19)
-For Russian, we used 
+For Russian, we used http://rucoref.maimbava.net/. Note This dataset is very small and we did not find significant results.
+
+The outputs for both languages are found in `outputs/coref`
+
+
 
 
 
