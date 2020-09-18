@@ -34,8 +34,11 @@ The input for our experiments is the English data found in `data/MT/source.en`. 
 To compute the differences in the prediction of anti-reflexives versus gendered possessive pronouns for masculine and feminine pronouns run:
 
 `python experiments/MT/evaluate_translation.py --lang sv --translations outputs/mt/preds_google.sv`
+
 `python experiments/MT/evaluate_translation.py --lang da --translations outputs/mt/preds_google.da`
+
 `python experiments/MT/evaluate_translation.py --lang ru --translations outputs/mt/preds_google.ru`
+
 `python experiments/MT/evaluate_translation.py --lang zh --translations outputs/mt/preds_google.zh`
 
 note for chinese we did not find significant results.
