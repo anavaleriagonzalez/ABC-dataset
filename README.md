@@ -4,9 +4,6 @@ This paper has been accepted at EMNLP 2020
 
 Please refer to the paper for data generation details. Below are some instructions on how to run the scripts provided in this repo
 
-
-
-
 <h3>LM: Perplexity scores</h3>
 Getting perplexity scores for each language
 
@@ -29,14 +26,24 @@ Getting perplexity scores for some benchmark dataset (no gender data)
 
 <h3>Machine Translation</h3>
 
-For the machine translation results in our paper we use the pretrained models for Russian and Chinese found here:
-`http://data.statmt.org/wmt17_systems/`
+For the machine translation results in our paper we use the pretrained models for Russian and Chinese found here: http://data.statmt.org/wmt17_systems/  as well as google translate.
 
+The input for our experiments is the English data found in `data/MT/source.en`. We evaluate based on the prediction of anti-reflexives versus gendered possessive pronouns. The script for this is in `experiments/MT/evaluate_translation.py`
+
+To compute the differences in the prediction of anti-reflexives versus gendered possessive pronouns for masculine and feminine pronouns run:
+
+`python experiments/MT/evaluate_translation.py --lang sv --translations outputs/mt/preds_google.sv`
+`python experiments/MT/evaluate_translation.py --lang da --translations outputs/mt/preds_google.da`
+`python experiments/MT/evaluate_translation.py --lang ru --translations outputs/mt/preds_google.ru`
+`python experiments/MT/evaluate_translation.py --lang zh --translations outputs/mt/preds_google.zh`
+
+note for chinese we did not find significant results.
 
 <h3> Coreference Resolution</h3>
 
 <h3> Natural Language Inference </h3>
 Preprocess the NLI files to get evaluation files in the correct format by running:
+
 `python experiments/NLI/preprocess_nli.py`
 
 To reproduce the results in the paper, follow the instructions https://github.com/facebookresearch/XLM
