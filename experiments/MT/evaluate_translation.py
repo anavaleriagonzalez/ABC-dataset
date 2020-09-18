@@ -19,7 +19,7 @@ with open(filename, "r") as f:
     for line in f.readlines():
         predictions.append(line.strip())
 
-with open('experiments/MT/prons/prons.'+lang, "r") as f:
+with open('experiments/prons/prons.'+lang, "r") as f:
     prons = [line.strip() for line in f.readlines()]
     reflexives, fem, masc = prons[0], prons[1], prons[2]
 

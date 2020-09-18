@@ -51,9 +51,6 @@ For Russian, we used http://rucoref.maimbava.net/. Note This dataset is very sma
 The outputs for both languages are found in `outputs/coref`
 
 
-
-
-
 <h3> Natural Language Inference </h3>
 Preprocess the NLI files to get evaluation files in the correct format by running:
 
